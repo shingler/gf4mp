@@ -1,0 +1,12 @@
+var numberUtil = {
+    //小数点后几位小数
+    numberFormat: function(value, digital=2) {
+        var v = parseFloat(value)
+        return v.toFixed(digital)
+    }
+}
+
+//暴露接口可用
+module.exports = {
+    numberFormat: numberUtil.numberFormat
+}

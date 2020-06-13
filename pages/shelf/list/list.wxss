@@ -1,0 +1,23 @@
+/* miniprogram/pages/shelf.wxss */
+.page-body {
+    width: 90%;
+}
+.search-input {
+    float: left;
+    width: 100%;
+}
+.search-input input {
+    width: 80%;
+    border: 1px solid #336699;
+}
+.btn-area {
+    float: right;
+    /* margin-right: 30px; */
+}
+.btn-area button {
+    background-color: #336699;
+    width: 60px;
+    text-align: center;
+    font-size: small;
+    padding: 5px;
+}

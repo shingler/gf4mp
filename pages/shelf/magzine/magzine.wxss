@@ -1,0 +1,17 @@
+/* miniprogram/pages/shelf/magzine/magzine.wxss */
+.page-body {
+    width: 90%;
+}
+.page-section-title {
+    text-align: center;
+    font-weight: bold;
+}
+.weui-cells__title {
+    padding-left: 0px;
+}
+.hidden {
+    display: none;
+}
+.show {
+    display: block;
+}

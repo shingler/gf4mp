@@ -1,0 +1,37 @@
+<!--miniprogram/pages/shelf/magzine/magzine.wxml-->
+<view class="page" data-weui-theme="light">
+    <view class="page__hd"></view>
+    <view class="page__bd">
+        <!--评分详情-->
+        <view class="weui-article">
+            <view class="weui-article__h1">{{info.shelf.titleCh}}</view>
+            <view class="weui-article__h3">{{info.magazine}}</view>
+            <view class="weui-article__section">
+                <view class="weui-article__p">
+                    <image class="weui-article__img" src="{{info.shelf.mp_cover_detail[0]}}" mode="aspectFit" style="height: 180px" />
+                </view>
+                <view class="weui-article__h2">{{info.subject}}</view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">
+                        媒体评分：<text class="weui-badge" style="margin-left: 5px;">{{info.score}}</text> \n
+                        {{info.scoreWord}}
+                    </view>
+                    <view class="weui-article__p">
+                        {{info.comment_trans}}
+                    </view>
+                    <view class="weui-cells__title">以上翻译自：百度翻译API</view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3" bindtap="show_origin">
+                        查看原文
+                    </view>
+                    <view class="weui-article__p {{origin_show}}" id="origin">
+                        {{info.comment}}
+                    </view>
+                </view>
+            </view>
+        </view>
+  </view>
+</view>
+<import src="/pages/footer.wxml"/>
+<template is="footer"></template>

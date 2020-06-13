@@ -1,0 +1,44 @@
+<view class="page" data-weui-theme="light">
+    <view class="page__hd">
+        <view class="page__hd"></view>
+        <!--搜索框-->
+        <view class="page__bd">
+            <mp-searchbar bindselectresult="selectResult" 
+                value="{{inputVal}}" placeholder="请输入游戏名称" 
+                search="{{search}}" throttle="100">
+            </mp-searchbar>
+        </view>
+    </view>
+    <view class="page__bd">
+        <!--列表-->
+        <view class="weui-panel weui-panel_access">
+			<view class="weui-panel__hd">游戏列表</view>
+            <mp-cells>
+                <mp-cell link wx:for="{{result}}" url="/pages/shelf/detail/detail?id={{item.gameId}}">
+                    <view slot="title" style="position: relative;margin-right: 10px;">
+                        <image src="{{item.mp_cover[0]}}" style="width: 60px; height: 60px; display: block"/>
+                    </view>
+                    <view>{{item.titleCh}}</view>
+                    <view style="font-size: 13px;color: #888888;">
+                        <text wx:if="{{item.hasChinese==true}}">有中文</text>
+                    </view>
+                </mp-cell>
+            </mp-cells>
+            <!--加载更多-->
+            <block wx:if="{{loadMore == true}}">
+                <view class="weui-loadmore">
+                    <view class="weui-loading"></view>
+                    <view class="weui-loadmore__tips">正在加载</view>
+                </view>
+            </block>
+            <block wx:if="{{noMore == true}}">
+                <view class="weui-loadmore weui-loadmore_line">
+                    <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class="page__ft"></view>
+</view>
+<import src="/pages/footer.wxml"/>
+<template is="footer"></template>
