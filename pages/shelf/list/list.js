@@ -12,7 +12,9 @@ Page({
     loadMore: true,
     noMore: false,
     inputShowed: false,
-    inputVal: ""
+    inputVal: "",
+    loading_show: "show",
+    end_show: "hide"
   },
 
   /**
@@ -128,16 +130,22 @@ Page({
         } else {
           data_list = res.data.results
         }
-        console.log(data_list)
+        // 是否有更多
+        if (res.data.next == null) {
+          noMore = true;
+        }
         that.setData({
           result: data_list,
-          loadMore: false
+          noMore: noMore,
+          loading_show: noMore ? "hide" : "show",
+          end_show: noMore ? "show" : "hide"
         })
       },
       fail(res) {
         noMore = true
         that.setData({
-          noMore: true
+          loading_show: "hide",
+          end_show: "show"
         })
       }
     })
@@ -147,14 +155,9 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    // console.log("page="+page+", keyword="+keyword)
-    this.setData({
-      loadMore: true
-    })
     if (noMore == false) {
       page++
-      var that = this
-      this.get_shelf_list(that, keyword, page)
+      this.get_shelf_list(this, keyword, page)
     }
   },
 

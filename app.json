@@ -3,7 +3,7 @@
         "pages/shelf/list/list",
         "pages/shelf/detail/detail",
         "pages/shelf/magzine/magzine",
-        "pages/footer"
+        "pages/footer/footer"
     ],
     "window": {
         "backgroundTextStyle": "light",

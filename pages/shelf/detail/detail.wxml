@@ -31,10 +31,11 @@
 		<!--游戏评分-->
 		<mp-cells title="媒体评分">
 			<mp-cell wx:for="{{magzine}}" link url="/pages/shelf/magzine/magzine?id={{item.id}}">
-				<view slot="title">
-					<view>{{item.magazine}}</view>
-					<view style="font-size: 13px;color: #888888;">{{item.subject}}</view>
-				</view>
+				<view slot="title" style="position: relative;margin-right: 10px;">
+        			<image src="{{icon[item.magazine]}}" style="width: 50px; height: 50px; display: block"></image>
+        		</view>
+				<view>{{item.magazine}}</view>
+				<view style="font-size: 13px;color: #888888;">{{item.subject}}</view>
 				<view slot="footer">
 					<mp-badge content="{{item.score}}" style="margin-left: 5px;" />
 				</view>
@@ -43,18 +44,18 @@
 		<!--价格-->
     <mp-cells title="价格一览">
       <mp-cell wx:for="{{info.subjects}}">
-				<view slot="title" style="position: relative;margin-right: 10px;">
-          <image src="{{icon[item.platform]}}" style="width: 50px; height: 50px; display: block"></image>
-        </view>
-				<view>{{dictUtil.getAreaFlag(item.saleArea)}} {{item.edition}}</view>
-				<view style="font-size: 13px;color: #888888;">{{item.currency}} {{item.latestPrice}}</view>
-				<view slot="footer">
-					约 {{numberUtil.numberFormat(item.latestPriceCNY, 2)}} 元
-				</view>
-			</mp-cell>
+			<view slot="title" style="position: relative;margin-right: 10px;">
+        		<image src="{{icon[item.platform]}}" style="width: 50px; height: 50px; display: block"></image>
+        	</view>
+			<view>{{dictUtil.getAreaFlag(item.saleArea)}} {{item.edition}}</view>
+			<view style="font-size: 13px;color: #888888;">{{item.currency}} {{item.latestPrice}}</view>
+			<view slot="footer">
+				约 {{numberUtil.numberFormat(item.latestPriceCNY, 2)}} 元
+			</view>
+		</mp-cell>
     </mp-cells>
 
 	</view>
 </view>
-<import src="/pages/footer.wxml" />
+<import src="/pages/footer/footer.wxml" />
 <template is="footer"></template>

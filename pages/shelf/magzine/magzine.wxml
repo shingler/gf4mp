@@ -33,5 +33,5 @@
         </view>
   </view>
 </view>
-<import src="/pages/footer.wxml"/>
+<import src="/pages/footer/footer.wxml"/>
 <template is="footer"></template>

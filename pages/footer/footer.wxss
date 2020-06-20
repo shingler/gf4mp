@@ -1,0 +1,8 @@
+.weui-footer_fixed-bottom {
+    position: none;
+}
+
+.footer {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}

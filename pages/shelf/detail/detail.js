@@ -113,7 +113,10 @@ Page({
         duration: 100,
         icon: {
           "switch": "/images/icon/switch.png",
-          "ps4": "/images/icon/ps4.png"
+          "ps4": "/images/icon/ps4.png",
+          "metacritic": "/images/icon/metacritic.png",
+          "Famitsu": "/images/icon/famitsu.png",
+          "gamespot": "/images/icon/gamespot.png"
         }
       },
       

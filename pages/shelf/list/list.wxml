@@ -25,20 +25,17 @@
                 </mp-cell>
             </mp-cells>
             <!--加载更多-->
-            <block wx:if="{{loadMore == true}}">
-                <view class="weui-loadmore">
-                    <view class="weui-loading"></view>
-                    <view class="weui-loadmore__tips">正在加载</view>
-                </view>
-            </block>
-            <block wx:if="{{noMore == true}}">
-                <view class="weui-loadmore weui-loadmore_line">
-                    <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
-                </view>
-            </block>
+            <view class="weui-loadmore {{loading_show}}">
+                <view class="weui-loading"></view>
+                <view class="weui-loadmore__tips">正在加载</view>
+            </view>
+            
+            <view class="weui-loadmore weui-loadmore_line {{end_show}}">
+                <view class="weui-loadmore__tips weui-loadmore__tips_in-line">已经到底啦~</view>
+            </view>
         </view>
     </view>
     <view class="page__ft"></view>
 </view>
-<import src="/pages/footer.wxml"/>
+<import src="/pages/footer/footer.wxml"/>
 <template is="footer"></template>
